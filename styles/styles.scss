@@ -1,0 +1,109 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+    vertical-align: baseline;
+    list-style: none;
+    text-decoration: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+//breakpoints
+$mobile: 420px;
+$desktop: 800px;
+
+::placeholder{
+    color: white;
+    opacity: 1; 
+}
+
+body{
+    font-family: 'Manjari', sans-serif;
+    font-size: 17px;
+    background: url(images/wildFlowers.jpg) center center fixed;
+    background-color: beige;
+    .header{
+        background:rgba(255,255,255, 0.9);
+        margin-top: 20%;
+        .pageTitle{
+            font-size: 60px;
+            font-family: 'Sacramento', cursive;
+            color: #e5c100;
+            margin-bottom: 25px;
+            padding-top: 20px;
+            display:flex;
+            text-align: center;
+            justify-content: center;
+        }
+        .menu{
+            margin: 0 15px 0 15px;
+            padding-bottom: 15px;
+            display:flex;
+            text-align: center;
+            justify-content: space-between;
+            .menuOptions{
+                font-size: 20px;
+                font-weight: bold;
+                color:#191919;
+                text-decoration: none;
+            }
+        }
+    }
+    .tasks{
+        background:rgba(255,255,255, 0.9);
+        padding: 10% 0 20% 0;
+        height: 70%;
+        .inputContainer{
+            display:flex;
+            text-align: center;
+            justify-content: center;
+            margin-right: 5%;
+            .taskInput{
+                border-style: none;
+                outline: none;
+                width: 72%;
+                height: 40px;
+                background: rgba(88, 88, 88, 0.8);
+                color: white;
+                padding-left: 5px;
+                padding-right: 4%;
+                font-family: 'Sacramento', cursive;
+                font-size: 26px;
+                letter-spacing: 2px;
+                position: relative;
+            }
+            .add{
+                font-size: 18px;
+                font-weight: bold;
+                color:#191919;
+                text-decoration: none;
+                margin-left: 5px;
+                display:flex;
+                text-align: center;
+                justify-content: center;
+                align-self: center;
+                background-color: #ff8da1;
+                padding: 5px 8px 1px 8px;
+                position: absolute;
+                right: 7%;
+            }
+        }
+    }
+}
+
