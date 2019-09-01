@@ -3,13 +3,12 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
+b, u, i, center, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, table, caption,
+tbody, tfoot, thead, tr, th, td, article,
+aside, canvas, details, embed, figure,
+figcaption, footer, header, hgroup, menu,
+nav, output, ruby, section, summary,
 time, mark, audio, video {
   margin: 0;
   padding: 0;
@@ -50,12 +49,43 @@ body {
   background-color: beige;
 }
 
-body .header {
+body .wraper {
+  position: relative;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+}
+
+@media only screen and (min-width: 750px) {
+  body .wraper {
+    width: 75%;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  body .wraper {
+    width: 70%;
+  }
+}
+
+body .wraper .header {
   background: rgba(255, 255, 255, 0.9);
   margin-top: 20%;
 }
 
-body .header .pageTitle {
+@media only screen and (min-width: 750px) {
+  body .wraper .header {
+    margin-top: 8%;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  body .wraper .header {
+    margin-top: 10%;
+  }
+}
+
+body .wraper .header .pageTitle {
   font-size: 60px;
   font-family: 'Sacramento', cursive;
   color: #e5c100;
@@ -70,32 +100,50 @@ body .header .pageTitle {
           justify-content: center;
 }
 
-body .header .menu {
+@media only screen and (min-width: 1200px) {
+  body .wraper .header .pageTitle {
+    font-size: 75px;
+  }
+}
+
+body .wraper .header .menu {
   margin: 0 15px 0 15px;
   padding-bottom: 15px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   text-align: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
-body .header .menu .menuOptions {
+body .wraper .header .menu .menuOptions {
   font-size: 20px;
   font-weight: bold;
   color: #191919;
   text-decoration: none;
+  position: relative;
 }
 
-body .tasks {
+body .wraper .header .menu .menuOptions:hover {
+  text-decoration: underline;
+  text-underline-position: under;
+}
+
+body .wraper .tasks {
   background: rgba(255, 255, 255, 0.9);
   padding: 10% 0 20% 0;
   height: 70%;
 }
 
-body .tasks .inputContainer {
+@media only screen and (min-width: 1200px) {
+  body .wraper .tasks {
+    padding: 2% 0 10% 0;
+  }
+}
+
+body .wraper .tasks .inputContainer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -106,22 +154,38 @@ body .tasks .inputContainer {
   margin-right: 5%;
 }
 
-body .tasks .inputContainer .taskInput {
+@media only screen and (min-width: 750px) {
+  body .wraper .tasks .inputContainer {
+    margin-right: 2%;
+  }
+}
+
+body .wraper .tasks .inputContainer .taskInput {
   border-style: none;
   outline: none;
   width: 72%;
-  height: 40px;
-  background: rgba(88, 88, 88, 0.8);
+  background: rgba(170, 153, 169, 0.9);
   color: white;
-  padding-left: 5px;
-  padding-right: 4%;
+  padding: 10px 4% 10px 5px;
   font-family: 'Sacramento', cursive;
-  font-size: 26px;
+  font-size: 30px;
   letter-spacing: 2px;
   position: relative;
 }
 
-body .tasks .inputContainer .add {
+@media only screen and (min-width: 750px) {
+  body .wraper .tasks .inputContainer .taskInput {
+    width: 78%;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  body .wraper .tasks .inputContainer .taskInput {
+    padding-left: 10px;
+  }
+}
+
+body .wraper .tasks .inputContainer .add {
   font-size: 18px;
   font-weight: bold;
   color: #191919;
@@ -140,5 +204,17 @@ body .tasks .inputContainer .add {
   padding: 5px 8px 1px 8px;
   position: absolute;
   right: 7%;
+  border-radius: 5px;
+}
+
+body .wraper .tasks .inputContainer .add:hover {
+  background-color: #ff4162;
+}
+
+@media only screen and (min-width: 1200px) {
+  body .wraper .tasks .inputContainer .add {
+    padding: 10px 16px 3px 16px;
+    right: 7%;
+  }
 }
 /*# sourceMappingURL=styles.css.map */

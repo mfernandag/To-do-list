@@ -3,13 +3,12 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
+b, u, i, center, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, table, caption, 
+tbody, tfoot, thead, tr, th, td, article,
+aside, canvas, details, embed, figure,
+figcaption, footer, header, hgroup, menu, 
+nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
 	padding: 0;
@@ -26,7 +25,8 @@ time, mark, audio, video {
 
 //breakpoints
 $mobile: 420px;
-$desktop: 800px;
+$mid: 750px;
+$desktop: 1200px;
 
 ::placeholder{
     color: white;
@@ -38,72 +38,120 @@ body{
     font-size: 17px;
     background: url(images/wildFlowers.jpg) center center fixed;
     background-color: beige;
-    .header{
-        background:rgba(255,255,255, 0.9);
-        margin-top: 20%;
-        .pageTitle{
-            font-size: 60px;
-            font-family: 'Sacramento', cursive;
-            color: #e5c100;
-            margin-bottom: 25px;
-            padding-top: 20px;
-            display:flex;
-            text-align: center;
-            justify-content: center;
+    //position: relative;
+    .wraper{
+        position: relative;
+        left: 50%;
+        transform: translate(-50%);
+        @media only screen and (min-width: $mid){
+            width: 75%;
         }
-        .menu{
-            margin: 0 15px 0 15px;
-            padding-bottom: 15px;
-            display:flex;
-            text-align: center;
-            justify-content: space-between;
-            .menuOptions{
-                font-size: 20px;
-                font-weight: bold;
-                color:#191919;
-                text-decoration: none;
+        @media only screen and (min-width: $desktop){
+            width: 70%;
+        }
+        .header{
+            background:rgba(255,255,255, 0.9);
+            margin-top: 20%;
+            @media only screen and (min-width: $mid){
+                margin-top: 8%;
             }
-        }
-    }
-    .tasks{
-        background:rgba(255,255,255, 0.9);
-        padding: 10% 0 20% 0;
-        height: 70%;
-        .inputContainer{
-            display:flex;
-            text-align: center;
-            justify-content: center;
-            margin-right: 5%;
-            .taskInput{
-                border-style: none;
-                outline: none;
-                width: 72%;
-                height: 40px;
-                background: rgba(88, 88, 88, 0.8);
-                color: white;
-                padding-left: 5px;
-                padding-right: 4%;
+            @media only screen and (min-width: $desktop){
+                margin-top: 10%;
+            }
+            .pageTitle{
+                font-size: 60px;
                 font-family: 'Sacramento', cursive;
-                font-size: 26px;
-                letter-spacing: 2px;
-                position: relative;
-            }
-            .add{
-                font-size: 18px;
-                font-weight: bold;
-                color:#191919;
-                text-decoration: none;
-                margin-left: 5px;
+                color: #e5c100;
+                margin-bottom: 25px;
+                padding-top: 20px;
                 display:flex;
                 text-align: center;
                 justify-content: center;
-                align-self: center;
-                background-color: #ff8da1;
-                padding: 5px 8px 1px 8px;
-                position: absolute;
-                right: 7%;
+                @media only screen and (min-width: $desktop){
+                    font-size: 75px;
+                }
+                }
+            .menu{
+                margin: 0 15px 0 15px;
+                padding-bottom: 15px;
+                display:flex;
+                text-align: center;
+                justify-content: space-evenly;
+                .menuOptions{
+                    font-size: 20px;
+                    font-weight: bold;
+                    color:#191919;
+                    text-decoration: none;
+                    position: relative;
+                    &:hover{
+                        text-decoration: underline;
+                        text-underline-position: under;
+                    }
+                }
+            }
+        }
+        .tasks{
+            background:rgba(255,255,255, 0.9);
+            padding: 10% 0 20% 0;
+            height: 70%;
+            @media only screen and (min-width: $desktop){
+                padding: 2% 0 10% 0;
+            }
+            .inputContainer{
+                display:flex;
+                text-align: center;
+                justify-content: center;
+                margin-right: 5%;
+                @media only screen and (min-width: $mid){
+                    margin-right: 2%;
+                }
+                .taskInput{
+                    border-style: none;
+                    outline: none;
+                    width: 72%;
+                    //background: rgba(88, 88, 88, 0.8);
+                    background: rgba(170,153,169,0.9);
+                    color: white;
+                    padding: 10px 4% 10px 5px;
+                    font-family: 'Sacramento', cursive;
+                    font-size: 30px;
+                    letter-spacing: 2px;
+                    position: relative;
+                    @media only screen and (min-width: $mid){
+                        width: 78%;
+                    }
+                    @media only screen and (min-width: $desktop){
+                        padding-left: 10px;
+                    }
+                }
+                .add{
+                    font-size: 18px;
+                    font-weight: bold;
+                    color:#191919;
+                    text-decoration: none;
+                    margin-left: 5px;
+                    display:flex;
+                    text-align: center;
+                    justify-content: center;
+                    align-self: center;
+                    background-color: #ff8da1;
+                    padding: 5px 8px 1px 8px;
+                    position: absolute;
+                    right: 7%;
+                    //border: 1px solid #333333;
+                    border-radius: 5px;
+                    &:hover{
+                        background-color: #ff4162;
+                    }
+                    @media only screen and (min-width: $desktop){
+                        padding: 10px 16px 3px 16px;
+                        right: 7%;
+                    }
+                }
             }
         }
     }
 }
+
+
 
